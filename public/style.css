@@ -52,6 +52,14 @@ header p {
   animation: fadeInUp 2s ease-out 1s both;
 }
 
+.credits {
+  font-size: 0.75rem;
+  text-align: center;
+  opacity: 0.6;
+  margin-top: 2rem;
+}
+
+
 /* Media Query for smaller screens */
 @media (max-width: 768px) {
   header h1 {
@@ -65,6 +73,11 @@ header p {
   .overlay-message {
     font-size: 1em; /* Even smaller overlay message */
     bottom: 1em; /* Adjust bottom position */
+  }
+  
+  .credits {
+    font-size: 0.7rem; /* Smaller font size for credits on mobile */
+    padding: 1rem; /* Adjust padding for a better fit */
   }
 }
 
