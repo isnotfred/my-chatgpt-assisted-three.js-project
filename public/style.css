@@ -52,13 +52,25 @@ header p {
   animation: fadeInUp 2s ease-out 1s both;
 }
 
+/* Styling for credits and link */
 .credits {
   font-size: 0.75rem;
   text-align: center;
   opacity: 0.6;
   margin-top: 2rem;
+  position: relative;
+  z-index: 10; /* Make sure it's above other content */
 }
 
+.credits a {
+  color: inherit; /* Keep the text color */
+  text-decoration: none;
+  pointer-events: auto; /* Ensure the link is clickable */
+}
+
+.credits a:hover {
+  text-decoration: underline; /* Optional: Add underline on hover */
+}
 
 /* Media Query for smaller screens */
 @media (max-width: 768px) {

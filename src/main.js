@@ -51,11 +51,23 @@ document.getElementById("container3D").appendChild(renderer.domElement);
 camera.position.z = 15;
 
 // Lighting
-const topLight = new THREE.DirectionalLight(0xffffff, 1);
+const topLight = new THREE.DirectionalLight(0xffffff, 1.5); // Reduced intensity for more balanced light
 topLight.position.set(500, 500, 500);
-topLight.castShadow = true;
+topLight.castShadow = false;
 scene.add(topLight);
 
+// Add a second directional light to light the bottom part more evenly
+const bottomLight = new THREE.DirectionalLight(0xffffff, 0.8); // Less intense to fill shadows
+bottomLight.position.set(0, -500, 500); // Position it to illuminate from below
+bottomLight.castShadow = false;
+scene.add(bottomLight);
+
+// Add a point light to help illuminate the model evenly
+const pointLight = new THREE.PointLight(0xffffff, 1.5, 100); // A brighter point light
+pointLight.position.set(0, -10, 10); // Place the point light near the model's center
+scene.add(pointLight);
+
+// Ambient light (remain as it is for subtle background lighting)
 const ambientLight = new THREE.AmbientLight(0x333333, 5);
 scene.add(ambientLight);
 
