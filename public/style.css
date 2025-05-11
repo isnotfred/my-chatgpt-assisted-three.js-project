@@ -1,0 +1,122 @@
+/* Reset & base */
+body {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  background: linear-gradient(135deg, #ff9aeb, #ffdde1);
+  overflow: hidden;
+}
+
+/* Header styling */
+header {
+  position: relative;
+  text-align: center;
+  color: rgb(255, 0, 0);
+  margin-top: 3em;
+  z-index: 10;
+  animation: fadeInDown 2s ease-out;
+}
+
+header h1 {
+  font-family: "Great Vibes", cursive;
+  font-size: 3em;
+  margin: 0;
+}
+
+header p {
+  font-size: 1.2em;
+  font-weight: 500;
+  margin-top: 0.5em;
+}
+
+
+/* 3D Container */
+#container3D canvas {
+  width: 100vw !important;
+  height: 100vh !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+/* Message overlay */
+.overlay-message {
+  position: absolute;
+  bottom: 2em;
+  width: 100%;
+  text-align: center;
+  font-size: 1.5em;
+  color: #ff0000;
+  text-shadow: 0 0 10px rgba(0,0,0,0.3);
+  z-index: 2;
+  animation: fadeInUp 2s ease-out 1s both;
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2em; /* Smaller font size on mobile */
+  }
+
+  header p {
+    font-size: 1em; /* Adjust paragraph size for mobile */
+  }
+
+  .overlay-message {
+    font-size: 1em; /* Even smaller overlay message */
+    bottom: 1em; /* Adjust bottom position */
+  }
+}
+
+/* Floating hearts */
+.background-decor .heart {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  transform: rotate(45deg);
+  animation: float 10s infinite ease-in-out;
+  opacity: 0.5;
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+.heart::before {
+  top: -10px;
+  left: 0;
+}
+
+.heart::after {
+  left: -10px;
+  top: 0;
+}
+
+/* Unique heart positions */
+.heart1 { top: 30%; left: 10%; animation-delay: 0s; }
+.heart2 { top: 60%; left: 70%; animation-delay: 2s; }
+.heart3 { top: 20%; left: 80%; animation-delay: 4s; }
+
+/* Animations */
+@keyframes float {
+  0% { transform: translateY(0) rotate(45deg); }
+  50% { transform: translateY(-30px) rotate(45deg); }
+  100% { transform: translateY(0) rotate(45deg); }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
